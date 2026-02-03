@@ -66,3 +66,36 @@ h1 {
   font-style: italic;
   color: #555;
 }
+.balloons {
+  position: fixed;
+  bottom: -100px;
+  width: 100%;
+  pointer-events: none;
+}
+
+.balloons span {
+  position: absolute;
+  font-size: 40px;
+  animation: rise 8s linear infinite;
+}
+
+.balloons span:nth-child(1) { left: 10%; animation-duration: 7s; }
+.balloons span:nth-child(2) { left: 30%; animation-duration: 9s; }
+.balloons span:nth-child(3) { left: 50%; animation-duration: 8s; }
+.balloons span:nth-child(4) { left: 70%; animation-duration: 10s; }
+.balloons span:nth-child(5) { left: 90%; animation-duration: 6s; }
+
+@keyframes rise {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(-120vh); opacity: 0; }
+}
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+}
+.hidden {
+  display: none;
+}
+box-shadow: 0 0 20px rgba(255,77,109,0.7);
